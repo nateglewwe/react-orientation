@@ -1,8 +1,9 @@
 //To use state, we need hooks
 import {useState} from 'react';
 
-function Card () {
+function Card (props) {
     const [myName, setMyName] = useState('Nathaniel');
+    const [count, setCount] = useState(0)
 
     //props.globalName
 
@@ -12,12 +13,17 @@ function Card () {
         setMyName('NATHANIEL');
     }
 
+    function clickCounter () {
+      //Add 1 to counter
+      setCount(count+1);
+    }
+
     return (
         <div className="card">
-        <button>
-          count is 0
+        <button onClick={clickCounter}>
+          {count}
         </button>
-        <p>{props.globalName ? props.globalName : myName}</p>
+        <p>{props.givenName ? props.givenName : myName}</p>
         <p>{myName}</p>
         <button onClick={clickChangeName}>Change Name</button>
         <p>

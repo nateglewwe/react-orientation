@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 function App() {
   const [globalName, setGlobalName] = useState();
 
-  const clickGlobalNameChange = () =>{
+  const clickGlobalNameChange = () => {
     setGlobalName('GLOBAL!');
   } 
   return (
@@ -16,10 +16,10 @@ function App() {
     {/* Header Component*/}
       <Header />
 
-      <button></button>
+      <button onClick={clickGlobalNameChange}>CHANGE ALL NAMES</button>
 
-      <Card />
-      <Card />
+      <Card givenName={globalName} />
+      <Card givenName={globalName}/>
       <Footer />
     </>
   )
